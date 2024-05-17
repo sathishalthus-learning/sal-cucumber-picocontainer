@@ -7,12 +7,6 @@ import org.openqa.selenium.WebDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import sal.di.pagefactory.pages.AddressPage;
-import sal.di.pagefactory.pages.CartPage;
-import sal.di.pagefactory.pages.CompletionPage;
-import sal.di.pagefactory.pages.LoginPage;
-import sal.di.pagefactory.pages.OrderPage;
-import sal.di.pagefactory.pages.ProductsPage;
 
 public class OrderItemSteps {
 	//

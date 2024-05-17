@@ -1,18 +1,16 @@
-package sal.di.pagefactory.pages;
+package sal.di.pagefactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import sal.di.pagefactory.WebDriverFactory;
-
-public class OrderPage {
+public class CartPage {
 	//
 	WebDriver driver;
 
 	//
-	public OrderPage(WebDriverFactory wdf) {
+	public CartPage(WebDriverFactory wdf) {
 		//
 		PageFactory.initElements(wdf.driver, this);
 		this.driver = wdf.driver;
@@ -20,12 +18,13 @@ public class OrderPage {
 
 
 	//
-	@FindBy(linkText =  "FINISH")
-	private WebElement btnFinish;
+	@FindBy(css = ".checkout_button")
+	private WebElement btnCheckout;
 	
+
 	
-	public void confirmOrder() {
-		btnFinish.click();
+	public void checkooutCart() {
+		btnCheckout.click();
 		
 	}
 

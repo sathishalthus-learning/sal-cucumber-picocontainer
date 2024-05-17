@@ -1,18 +1,16 @@
-package sal.di.pagefactory.pages;
+package sal.di.pagefactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import sal.di.pagefactory.WebDriverFactory;
-
-public class CartPage {
+public class CompletionPage {
 	//
 	WebDriver driver;
 
 	//
-	public CartPage(WebDriverFactory wdf) {
+	public CompletionPage(WebDriverFactory wdf) {
 		//
 		PageFactory.initElements(wdf.driver, this);
 		this.driver = wdf.driver;
@@ -20,13 +18,12 @@ public class CartPage {
 
 
 	//
-	@FindBy(css = ".checkout_button")
-	private WebElement btnCheckout;
+	@FindBy(css =  ".pony_express")
+	private WebElement imgPonyExpress;
 	
-
 	
-	public void checkooutCart() {
-		btnCheckout.click();
+	public boolean getOrderStatus() {
+		return imgPonyExpress.isDisplayed();
 		
 	}
 

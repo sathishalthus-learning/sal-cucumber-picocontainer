@@ -1,18 +1,16 @@
-package sal.di.pagefactory.pages;
+package sal.di.pagefactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import sal.di.pagefactory.WebDriverFactory;
-
-public class CompletionPage {
+public class OrderPage {
 	//
 	WebDriver driver;
 
 	//
-	public CompletionPage(WebDriverFactory wdf) {
+	public OrderPage(WebDriverFactory wdf) {
 		//
 		PageFactory.initElements(wdf.driver, this);
 		this.driver = wdf.driver;
@@ -20,12 +18,12 @@ public class CompletionPage {
 
 
 	//
-	@FindBy(css =  ".pony_express")
-	private WebElement imgPonyExpress;
+	@FindBy(linkText =  "FINISH")
+	private WebElement btnFinish;
 	
 	
-	public boolean getOrderStatus() {
-		return imgPonyExpress.isDisplayed();
+	public void confirmOrder() {
+		btnFinish.click();
 		
 	}
 
